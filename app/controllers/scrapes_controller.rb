@@ -39,7 +39,7 @@ class ScrapesController < ApplicationController
 	private
 
 	def scrape_params
-		params.require(:scrape).permit(:school, :role, :emails)
+		params.require(:scrape).permit(:school, :role, :url)
 	end
 
 

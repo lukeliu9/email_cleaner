@@ -15,7 +15,7 @@ require 'open-uri'
 
 		r = Regexp.new(/\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\b/)   
 		
-		source = open(website.emails, &:read)
+		source = open(website.url, &:read)
 
 		emails = source.scan(r).uniq
 
