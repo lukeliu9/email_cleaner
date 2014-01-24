@@ -3,7 +3,7 @@ has_many :contacts
 
 validates :school, presence: true
 validates :role, presence: true
-validates :emails, presence: true
+validates :url, presence: true
 
 require 'open-uri'
 
