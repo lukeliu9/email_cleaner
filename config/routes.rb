@@ -1,11 +1,12 @@
 Email::Application.routes.draw do
 
-  root to: 'pages#email_cleaner'
+  root to: 'scrapes#new'
 
-  resources :scrape
+  resources :scrapes do
+    resources :contacts
+  end 
 
-  match 'pages/email_cleaner' => 'pages#email_cleaner', :as => 'email_cleaner_path', :via => :post
-  match 'pages/clean_scrape' => 'pages#clean_scrape', :as => 'clean_scrape_path', :via => :post
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

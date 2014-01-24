@@ -1,0 +1,16 @@
+<%= form_for @scrape, validate: true do |f| %>
+
+<p class="field-label">School</p>
+<%= f.text_field :school %>
+
+<p class="field-label">Role</p>
+<%= f.text_field :role %>
+
+<p class="field-label">HTML source code</p>
+<%= f.text_area :url, rows: "20", cols: "70" %>
+
+<%= f.submit 'Scrape text' %>
+
+<%= @scrape.errors.full_messages.first if @scrape.errors.any? %>
+
+<% end %>

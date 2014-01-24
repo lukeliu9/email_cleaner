@@ -1,0 +1,22 @@
+
+<table>
+<th>
+<td>ID</td>
+<td>School</td>
+<td>Role</td>
+<td>Emails</td>
+<td>Actions</td>
+</th>
+<% @scrapes.each do |scrape| %>
+
+<tr>
+<td><%= scrape.id %></td>
+<td><%= scrape.school %></td>
+<td><%= scrape.role %></td>
+<td><%= scrape.contacts ? scrape.contacts.count : "None" %></td>
+<td><%= link_to "View", scrape %><%= link_to "Delete", scrape_path(scrape), method: :delete %></td>
+</tr>
+
+<% end %>
+
+</table>
