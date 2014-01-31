@@ -22,10 +22,19 @@ require 'open-uri'
 		new_emails = []
 
 		emails.each do |email|
-			new_emails << Contact.new(email: email, scrape_id: scrape)
+			start = 0
+			address = email.split('@')[0]
+			search_result = source.index(address)
+			until search_result == nil
+				start += 1
+				address = address[start..address.length]
+				search_result = source.index(address)
+			end
 		end
 
-		return new_emails
+		# new_emails << Contact.new(email: email, scrape_id: scrape)
+
+		# return new_emails
 
 	end
 
